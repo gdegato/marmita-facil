@@ -1,0 +1,20 @@
+{
+  "carboidrato": [
+    {
+      "id": 1,
+      "name": "Batata no vapor"
+    },
+    {
+      "id": 2,
+      "name": "Arroz"
+    },
+    {
+      "id": 3,
+      "name": "Massa Integral"
+    },
+    {
+      "id": 4,
+      "name": "Arroz Integral"
+    }
+  ]
+}

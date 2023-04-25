@@ -1,0 +1,59 @@
+.container-home {
+    padding: 10px;
+    width: 330px;
+    height: auto;
+    margin: 15px;
+}
+
+.logo-home {
+    margin-top: 30px;
+}
+
+.container-home-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.container-home-titulo h2 {
+    font-size: 22px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.05em;
+    margin-bottom: 20px;
+}
+
+.container-home-titulo h4 {
+    margin-bottom: 26px;
+    padding: 0 15px;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+.container-home-texto ul li {
+    font-size: 14px;
+    letter-spacing: -3%;
+}
+
+.container-home-texto {
+    padding: 0 16px;
+    line-height: 19px;
+    letter-spacing: -0.05em;
+}
+
+.button-home button {
+    background-color: #17C294;
+    border: #17C294;
+    margin-top: 25px;
+    margin-bottom: 35px;
+    width: 170px;
+    border-radius: 5px;
+}
+
+.button-home button:hover {
+    background-color: #04a87c;
+    transition: 0.5s;
+}

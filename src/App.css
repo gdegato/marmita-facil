@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+
+    box-sizing: border-box;
+}
+
+body {
+    background: url('./assets/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+:root {
+    --primary-color: #fff;
+    --secondary-color: #D7D7D7;
+    --blue-color: #334AC3;
+    --grey-color: #616161;
+    --grey-light-color: #9E9E9E;
+    --textos: #333333;
+    --vermelho: #E56353;
+    --verde: #17C294;
+    --laranja: #DC820D;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: unset;
+}
+
+.base-card {
+    background: var(--secondary-color);
+    background-color: rgba(215, 215, 215, 0.9);
+    border-radius: 10px;
+    width: 650px;
+    padding-bottom: 70px;
+}

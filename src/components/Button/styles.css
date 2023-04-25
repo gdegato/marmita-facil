@@ -1,0 +1,48 @@
+.button-container {
+    align-content: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.button-customized {
+    width: 170px;
+    height: 40px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.button-customized h6 {
+    margin-top: 0;
+}
+
+button {
+    background-color: transparent;
+    border: transparent;
+}
+
+/*
+@media(min-width: 576px) {
+    .botao {
+        width: 496px;
+        height: 65px;
+        margin-bottom: 10px;
+    }
+}
+
+@media(min-width: 768px) {
+    .botao {
+        width: 608px;
+        height: 50px;
+    }
+}
+
+@media(min-width: 992px) {
+    .botao {
+        width: 400px;
+    }
+}
+
+*/
