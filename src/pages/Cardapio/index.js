@@ -6,10 +6,17 @@ import Button from '../../components/Button'
 
 
 function Cardapio() {
+  var marmita = localStorage.getItem('marmita')
+  var m =JSON.parse(marmita)
   return (
     <Default withHeader>
       <div className='mt-8 text-center'>
-        <h1>Aqui deve exibir um único cardapio</h1>
+        <div className='frame-cardapio'>
+          <p>{m.quantidade} marmitas</p>
+          <p>{m.proteina}- 100gr</p>
+          <p>{m.carboidrato}- 100gr</p>
+          <p>{m.vegetal}-200gr</p>
+        </div>
         <p>Quer montar mais um cardapio?</p>
       </div>
 
