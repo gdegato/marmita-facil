@@ -1,5 +1,4 @@
-{
-  "vegetal": [
+[
     {
       "id": 1,
       "name": "Brócolis"
@@ -21,5 +20,4 @@
       "id": 5,
       "name": "Couve refogada"
     }
-  ]
-}
+]

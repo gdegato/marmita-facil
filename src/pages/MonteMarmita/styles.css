@@ -37,15 +37,5 @@
    text-align: center;
 }
 
-.qtd-select__control {
-    height: 60px;
-    background-color: rgba(215, 215, 215, 0.9);
-    border-radius: 10px !important;
-    border: 1px solid var(--grey-light-color) !important;
-    text-align: left;
-}
 
-.qtd-select__indicator-separator {
-    display: none;
-}
 

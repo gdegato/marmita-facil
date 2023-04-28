@@ -3,10 +3,11 @@ import './styles.css'
 import Button from '../../components/Button'
 import { Link } from 'react-router-dom'
 import { ReactComponent as LogoMarmita } from '../../assets/images/logo-marmita.svg'
+import Default from '../../templates/default'
 
 const Home = () => {
   return (
-    <div className="container-home base-card">
+    <Default>
       <div className="container-home-titulo">
         <div className="logo-home">
           <LogoMarmita />
@@ -20,7 +21,7 @@ const Home = () => {
       </div>
 
       <div className="container-home-texto">
-        <ul>
+        <ul className='list-disc'>
           <li>
             Criamos cardápios de marmitas que podem ser preparadas em poucas
             horas, baseadas nas suas possibilidades financeiras e seu gosto
@@ -34,13 +35,13 @@ const Home = () => {
             Tenha acesso a várias funcionalidades com nossos recursos Premium.
           </li>
         </ul>
-        <div className="button-home">
+        <div className="my-4 text-center">
           <Link to="/montemarmita">
-            <Button text="criar cardápio" />
+            <Button text="Criar Cardápio" />
           </Link>
         </div>
       </div>
-    </div>
+    </Default>
   )
 }
 

@@ -1,5 +1,4 @@
-{
-  "proteina": [
+[
     {
       "id": 1,
       "name": "Frango"
@@ -21,5 +20,4 @@
       "id": 5,
       "name": "Lentilha"
     }
-  ]
-}
+]

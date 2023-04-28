@@ -43,17 +43,3 @@
     line-height: 19px;
     letter-spacing: -0.05em;
 }
-
-.button-home button {
-    background-color: #17C294;
-    border: #17C294;
-    margin-top: 25px;
-    margin-bottom: 35px;
-    width: 170px;
-    border-radius: 5px;
-}
-
-.button-home button:hover {
-    background-color: #04a87c;
-    transition: 0.5s;
-}

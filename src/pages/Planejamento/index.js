@@ -1,13 +1,16 @@
 import React from 'react'
 import './styles.css'
-import Header from '../../components/Header'
+import Default from '../../templates/default'
 
 function Planejamento() {
     return (
-        <div className="container-planejamento base-card">
-            <Header />
-            <h1>Aqui deve exibir o planejamento final</h1>
-        </div>
+        <Default withHeader>
+            <div className='mt-8 text-center'>
+                <h1>Aqui deve exibir o planejamento final</h1>
+            </div>
+
+            
+        </Default>
     )
 }
 
