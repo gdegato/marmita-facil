@@ -27,15 +27,7 @@ function MonteMarmita() {
 
     const adicionaMarmita = (e) => {
         e.preventDefault();
-        // logic to add marmita
-        console.log('Marmita: ', {
-            marmita: {
-                proteina,
-                carboidrato,
-                vegetal
-            },
-            quantidade
-        })
+        localStorage.setItem('marmita',JSON.stringify({proteina,carboidrato,vegetal,quantidade}))
         history.push('/cardapio')
     }
 
