@@ -1,28 +1,37 @@
 import './styles.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Header from '../../components/Header'
+import Default from '../../templates/default'
 import Button from '../../components/Button'
+import Storage from '../../data/storage'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
+import SummaryCardapio from '../../components/SummaryCardapio'
 
 
 function Cardapio() {
-  return (
-    <div className="container-cardapio base-card">
-       <Header />
-      <h1>Aqui deve exibir um único cardapio</h1>
-      <p>Quer montar mais um cardapio?</p>
+  const history = useHistory();
+  const cardapio = Storage.get('cardapio')
 
-      <div className="button-cardapio">
+  if (!cardapio || !Array.isArray(cardapio)) history.push('/montemarmita')
+
+  return (
+    <Default withHeader>
+      <div className='mt-8 text-center'>
+        <div className='frame-cardapio'>
+          <SummaryCardapio />
+        </div>
+        <p className='pt-10 font-bold'>Quer adicionar mais marmitas?</p>
+      </div>
+
+      <div className="button-cardapio flex items-center justify-center gap-4 mt-8">
         <Link to="/montemarmita">
           <Button text="SIM" />
         </Link>
         <Link to="/planejamento">
-          <Button text="NÃO" />
+          <Button isSecondary text="NÃO" />
         </Link>
       </div>
-
-
-    </div>
+    </Default>
   )
 }
 

@@ -1,13 +1,12 @@
-import './styles.css'
-
-
-const Button = ({ text }) => {
+import './index.css'
+const Button = ({ text, isSecondary, onClick = () => {}, ...props }) => {
+  let className = 'btn ';
+  isSecondary ? className += 'btn-secondary' : className += 'btn-primary'
+  
   return (
-    <div className="button-container">
-      <button className="button-customized">
-        <h6>{text}</h6>
-      </button>     
-    </div>
+    <button className={className} onClick={(e) => onClick(e)} {...props}>
+      {text}
+    </button>     
   )
 }
 

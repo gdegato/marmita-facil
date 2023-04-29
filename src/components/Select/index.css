@@ -1,0 +1,16 @@
+.react-select__control {
+    width: 100%;
+    height: 60px;
+    background-color: rgba(215, 215, 215, 0.9);
+    border-radius: 10px !important;
+    border: 2px solid var(--grey-light-color) !important;
+    text-align: left;
+}
+
+.react-select__menu {
+    text-align: left;
+}
+
+.react-select__indicator-separator {
+    display: none;
+}

@@ -1,5 +1,4 @@
-{
-  "carboidrato": [
+[
     {
       "id": 1,
       "name": "Batata no vapor"
@@ -16,5 +15,4 @@
       "id": 4,
       "name": "Arroz Integral"
     }
-  ]
-}
+]

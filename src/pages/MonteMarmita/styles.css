@@ -1,10 +1,3 @@
-.container-balanceando {
-    padding: 10px;
-    width: 330px;
-    height: auto;
-    margin: 15px;
-}
-
 .container-balanceando-titulo {
     display: flex;
     flex-direction: column;
@@ -18,34 +11,15 @@
     letter-spacing: -0.03em;
 }
 
-.formulario-container {
-    border: 1px solid red;
-    width: 300px;
+.red-select .react-select__control {
+    border-color: var(--vermelho)!important;
 }
 
-.filter-quantidade{
-    width: 80px; 
-    margin: 15px;
+.orange-select .react-select__control {
+    border-color: var(--laranja)!important;
 }
 
-.container-quantidade{
-    display: flex;
-}
-
-.container-quantidade h3{
-   padding-left: 15px;
-   text-align: center;
-}
-
-.qtd-select__control {
-    height: 60px;
-    background-color: rgba(215, 215, 215, 0.9);
-    border-radius: 10px !important;
-    border: 1px solid var(--grey-light-color) !important;
-    text-align: left;
-}
-
-.qtd-select__indicator-separator {
-    display: none;
+.green-select .react-select__control {
+    border-color: var(--verde)!important;
 }
 
