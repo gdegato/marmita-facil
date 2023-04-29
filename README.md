@@ -1,16 +1,8 @@
+
 # Marmita Fácil
 
 Aplicação desenvolvida para o Projeto Integrador: Desenvolvimento de sistema web modularizável do curso Sistemas para Internet do SENAC.
 
-<<<<<<< HEAD
-## Instalação
-
-Observar que o React é a versão 17.0.2
-Usar o node versão v14.18.2
-
-Para instalar este projeto:
-
-=======
 Criada pelo Grupo 05 com os integrantes:
 - Isabella Queiroz Barbosa
 - Joel de Oliveira Santos
@@ -37,30 +29,11 @@ Criada pelo Grupo 05 com os integrantes:
 - Para visualizar o código do projeto, realize o clone do projeto para sua máquina local.
 - Abra a pasta em uma IDE de sua preferência.
 - Abra um terminal de sua preferência e insira o seguinte comando para instalar as dependências necessárias:
->>>>>>> Rodrigo
 ```bash
   npm install
 ```
-<<<<<<< HEAD
-
-=======
 - Em seguida, insira o seguinte comando para iniciar a aplicação em modo de desenvolvimento:
->>>>>>> Rodrigo
 ```bash
   npm start
 ```
-<<<<<<< HEAD
 
-```bash
-npm install react-router-dom@5.2.0
-```
-
-```bash
-npm install react-select@5.7.2
-```
-
-```bash
-npm install bootstrapt@5.0.2
-```
-=======
->>>>>>> Rodrigo
