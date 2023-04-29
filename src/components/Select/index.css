@@ -3,7 +3,11 @@
     height: 60px;
     background-color: rgba(215, 215, 215, 0.9);
     border-radius: 10px !important;
-    border: 1px solid var(--grey-light-color) !important;
+    border: 2px solid var(--grey-light-color) !important;
+    text-align: left;
+}
+
+.react-select__menu {
     text-align: left;
 }
 

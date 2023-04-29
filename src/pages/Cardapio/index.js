@@ -3,21 +3,24 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Default from '../../templates/default'
 import Button from '../../components/Button'
+import Storage from '../../data/storage'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
+import SummaryCardapio from '../../components/SummaryCardapio'
 
 
 function Cardapio() {
-  var marmita = localStorage.getItem('marmita')
-  var m =JSON.parse(marmita)
+  const history = useHistory();
+  const cardapio = Storage.get('cardapio')
+
+  if (!cardapio || !Array.isArray(cardapio)) history.push('/montemarmita')
+
   return (
     <Default withHeader>
       <div className='mt-8 text-center'>
         <div className='frame-cardapio'>
-          <p>{m.quantidade} marmitas</p>
-          <p>{m.proteina}- 100gr</p>
-          <p>{m.carboidrato}- 100gr</p>
-          <p>{m.vegetal}-200gr</p>
+          <SummaryCardapio />
         </div>
-        <p>Quer montar mais um cardapio?</p>
+        <p className='pt-10 font-bold'>Quer adicionar mais marmitas?</p>
       </div>
 
       <div className="button-cardapio flex items-center justify-center gap-4 mt-8">

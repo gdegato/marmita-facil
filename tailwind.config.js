@@ -8,9 +8,11 @@ module.exports = {
   theme: {
     colors: {
       red: '#E56353',
+      redDark: '#cd5040',
       green: '#17C294',
       greenDark: '#04a87c',
       orange: '#DC820D',
+      dark: '#333',
       black: colors.black,
       white: colors.white,
       gray: colors.gray,
@@ -19,7 +21,8 @@ module.exports = {
       yellow: colors.yellow,
     },
     fontFamily: {
-      openSans: ['Open Sans', 'sans-serif']
+      openSans: ['Open Sans', 'sans-serif'],
+      indie: ['Indie Flower', 'cursive'],
     },
     extend: {},
   },

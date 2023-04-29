@@ -8,6 +8,7 @@ import proteinas from '../../data/proteinas.json'
 import carboidratos from '../../data/carboidratos.json'
 import vegetais from '../../data/vegetais.json'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import Storage from '../../data/storage';
 
 
 function MonteMarmita() {
@@ -25,40 +26,68 @@ function MonteMarmita() {
         { value: 5, label: 5 },
     ]
 
+    const isValidForm = () => {
+        return quantidade > 0 && (proteina || carboidrato || vegetal)
+    }
+
     const adicionaMarmita = (e) => {
         e.preventDefault();
-        localStorage.setItem('marmita',JSON.stringify({proteina,carboidrato,vegetal,quantidade}))
-        history.push('/cardapio')
+
+        if (isValidForm()) {
+            const cardapioSalvoAnteriormente = Storage.get('cardapio');
+            let cardapioNovo = []
+
+            if (cardapioSalvoAnteriormente && Array.isArray(cardapioSalvoAnteriormente)) {
+                cardapioNovo = cardapioSalvoAnteriormente
+            }
+
+            cardapioNovo.push({
+                proteina,
+                carboidrato,
+                vegetal,
+                quantidade
+            })
+
+            Storage.save('cardapio', cardapioNovo);
+
+            history.push('/cardapio')
+        }
     }
 
     return (
         <Default withHeader>
             <div className="container-balanceando-titulo">
-                <h1>Monte sua marmita</h1>
-                <Select
-                    options={proteinas.map((proteina) => ({ value: proteina.name, label: proteina.name }))}
-                    getOptionValue={(option) => option.value}
-                    onChange={({ value }) => setProteina(value)}
-                    className="w-full mb-5"
-                    placeholder="Proteína"
-                />
-                <Select
-                    options={carboidratos.map((carboidrato) => ({ value: carboidrato.name, label: carboidrato.name }))}
-                    getOptionValue={(option) => option.value}
-                    onChange={({ value }) => setCarboidrato(value)}
-                    className="w-full mb-5"
-                    placeholder="Carboidrato"
-                />
-                <Select
-                    options={vegetais.map((vegetal) => ({ value: vegetal.name, label: vegetal.name }))}
-                    getOptionValue={(option) => option.value}
-                    onChange={({ value }) => setVegetal(value)}
-                    className="w-full mb-5"
-                    placeholder="Legumes & Vegetais"
-                />
+                <h1 className='text-dark'>Monte sua marmita</h1>
+                <div className='red-select w-full'>
+                    <Select
+                        options={proteinas.map((proteina) => ({ value: proteina.name, label: proteina.name }))}
+                        getOptionValue={(option) => option.value}
+                        onChange={({ value }) => setProteina(value)}
+                        className="w-full mb-5"
+                        placeholder="Proteína"
+                    />
+                </div>
+                <div className='orange-select w-full'>
+                    <Select
+                        options={carboidratos.map((carboidrato) => ({ value: carboidrato.name, label: carboidrato.name }))}
+                        getOptionValue={(option) => option.value}
+                        onChange={({ value }) => setCarboidrato(value)}
+                        className="w-full mb-5"
+                        placeholder="Carboidrato"
+                    />
+                </div>
+               <div className='green-select w-full'>
+                    <Select
+                        options={vegetais.map((vegetal) => ({ value: vegetal.name, label: vegetal.name }))}
+                        getOptionValue={(option) => option.value}
+                        onChange={({ value }) => setVegetal(value)}
+                        className="w-full mb-5"
+                        placeholder="Legumes & Vegetais"
+                    />
+               </div>
             </div>
             <div className='flex justify-center items-center'>
-                <h3 className='font-bold text-center text-xl mr-3'>Quantidade de marmitas</h3>
+                <h3 className='font-bold text-center text-dark text-xl mr-3'>Quantidade de marmitas</h3>
                 <Select
                     options={quantidadeSelectInputOptions}
                     onChange={({ value }) => setQuantidade(value)}
@@ -67,7 +96,7 @@ function MonteMarmita() {
                 />
             </div>
             <div className="mt-10 mb-4 text-center">
-                <Button onClick={adicionaMarmita} text="criar cardápio" />
+                <Button disabled={!isValidForm()} onClick={adicionaMarmita} text="criar cardápio" />
             </div>
         </Default>
     )

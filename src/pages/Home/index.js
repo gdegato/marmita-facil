@@ -13,25 +13,25 @@ const Home = () => {
           <LogoMarmita />
         </div>
 
-        <h2>Marmitas fáceis para aproveitar o melhor da vida</h2>
-        <h4>
+        <h2 class="font-bold text-dark">Marmitas fáceis para aproveitar o melhor da vida</h2>
+        <h4 className='font-bold text-red'>
           Quer uma rotina de alimentação saudável economizando tempo e dinheiro?
           Vem com a gente!
         </h4>
       </div>
 
       <div className="container-home-texto">
-        <ul className='list-disc'>
-          <li>
+        <ul className='list-disc ml-4'>
+          <li className='mb-2'>
             Criamos cardápios de marmitas que podem ser preparadas em poucas
             horas, baseadas nas suas possibilidades financeiras e seu gosto
             culinário, para vários dias.
           </li>
-          <li>
+          <li className='mb-2'>
             Responda o nosso formulário e, de acordo com suas escolhas,
             criaremos um cardápio especialmente para você!
           </li>
-          <li>
+          <li className='mb-2'>
             Tenha acesso a várias funcionalidades com nossos recursos Premium.
           </li>
         </ul>

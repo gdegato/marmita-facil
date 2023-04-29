@@ -4,10 +4,10 @@
 
 @layer components {
     .btn, .btn.btn-primary {
-        @apply h-12 w-auto px-8 text-lg uppercase font-bold text-white hover:bg-greenDark bg-green rounded-md;
+        @apply h-12 w-auto px-8 text-lg uppercase font-bold text-white hover:bg-greenDark bg-green rounded-md disabled:opacity-50 disabled:bg-gray-500 disabled:cursor-not-allowed shadow-md;
     }
 
     .btn.btn-secondary {
-        @apply bg-red;
+        @apply bg-red hover:bg-redDark;
     }
 }
