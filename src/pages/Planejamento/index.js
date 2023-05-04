@@ -10,6 +10,9 @@ function Planejamento() {
     const cardapio = Storage.get('cardapio')
 
     if (!cardapio || !Array.isArray(cardapio)) history.push('/montemarmita')
+    
+    const quantidadeDasMarmitas = cardapio.map((marmita) => marmita.quantidade);
+    const qtdTotalMarmitas = quantidadeDasMarmitas.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
     return (
         <Default withHeader>
@@ -18,7 +21,7 @@ function Planejamento() {
                 <SummaryCardapio />
             </div>
             <div className='mt-4 p-4 text-sm text-gray-600 rounded-xl bg-white/70 border border-solid border-[#9E9E9E]'>
-                <p>A média de tempo para preparar uma refeição é de, no mínimo, uma hora. O planejamento que você montou equivale a 15 horas para aproveitar com o que quiser!</p>
+                <p>A média de tempo para preparar uma refeição é de, no mínimo, uma hora. O planejamento que você montou equivale a {qtdTotalMarmitas} horas para aproveitar com o que quiser!</p>
             </div>
         </Default>
     )
