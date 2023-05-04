@@ -27,7 +27,7 @@ function MonteMarmita() {
     ]
 
     const isValidForm = () => {
-        return quantidade > 0 && (proteina || carboidrato || vegetal)
+        return quantidade > 0 && proteina && carboidrato && vegetal
     }
 
     const adicionaMarmita = (e) => {
