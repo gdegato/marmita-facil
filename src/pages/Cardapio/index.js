@@ -1,4 +1,3 @@
-import './styles.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Default from '../../templates/default'
@@ -16,19 +15,18 @@ function Cardapio() {
 
   return (
     <Default withHeader>
+      <h1 className='text-dark text-4xl font-semibold text-center mb-8 flex justify-center items-center tracking-tighter'>Seu cardápio</h1>
       <div className='mt-8 text-center'>
-        <div className='frame-cardapio'>
-          <SummaryCardapio />
-        </div>
-        <p className='pt-10 font-bold'>Quer adicionar mais marmitas?</p>
+        <SummaryCardapio />
+        <p className='pt-10 font-bold'>Deseja montar outro cardápio?</p>
       </div>
 
-      <div className="button-cardapio flex items-center justify-center gap-4 mt-8">
+      <div className="flex items-center justify-around gap-4 mt-8">
         <Link to="/montemarmita">
-          <Button text="SIM" />
+          <Button text="SIM" isSmall={true} />
         </Link>
         <Link to="/planejamento">
-          <Button isSecondary text="NÃO" />
+          <Button isSecondary text="NÃO" isSmall={true} />
         </Link>
       </div>
     </Default>

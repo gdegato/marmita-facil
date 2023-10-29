@@ -1,12 +1,12 @@
-import './index.css'
-const Button = ({ text, isSecondary, onClick = () => {}, ...props }) => {
-  let className = 'btn ';
-  isSecondary ? className += 'btn-secondary' : className += 'btn-primary'
+const Button = ({ text, isSecondary, isSmall, onClick = () => {}, ...props }) => {
+  const btnPrimary = `h-12 ${isSmall ? "w-[90px]" : "w-[188px]"} mt-4 text-sm uppercase font-bold text-white rounded-md disabled:opacity-80 disabled:bg-gray-500 disabled:cursor-not-allowed shadow-md hover:bg-greenDark bg-green`
+
+  const btnSecondary = `h-12 ${isSmall ? "w-[90px]" : "w-[188px]"} mt-4 text-sm uppercase font-bold text-white rounded-md disabled:opacity-80 disabled:bg-gray-500 disabled:cursor-not-allowed shadow-md hover:bg-redDark bg-red`
   
   return (
-    <button className={className} onClick={(e) => onClick(e)} {...props}>
+    <button className={isSecondary ? btnSecondary : btnPrimary } onClick={(e) => onClick(e)} {...props}>
       {text}
-    </button>     
+    </button>
   )
 }
 

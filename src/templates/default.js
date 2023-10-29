@@ -1,6 +1,5 @@
 
 import Header from '../components/Header'
-import './default.css'
 
 const Default = ({ children, withHeader }) => {
     const getHeader = () => {
@@ -11,7 +10,7 @@ const Default = ({ children, withHeader }) => {
     }
 
     return (
-        <div className="container">
+        <div className="w-[300px] h-auto px-4 py-6 mx-auto my-4 rounded-lg bg-graylight">
             {getHeader()}
             {children}
         </div>
