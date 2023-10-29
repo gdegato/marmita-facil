@@ -8,7 +8,7 @@ import cardapios from "../../data/cardapios.json"
 
 function CardapiosProntos() {
     const history = useHistory()
-    const [quantidade, setQuantidade] = useState(0);
+    const [quantidade, setQuantidade] = useState(0)
     const [cardapio, setCardapio] = useState()
 
     const quantidadeSelectInputOptions = [
@@ -63,16 +63,21 @@ function CardapiosProntos() {
                         />
                     </div>
                 </div>
-
-                <div className='bg-white/70 border border-gray-500 rounded-lg  mb-4'>
-                    {cardapio || Array.isArray(cardapio) ? cardapio.map((marmita, index) => (
-                        <div key={index} className='w-4/5 mx-auto py-6'>
-                        <p className='font-indie text-xl text-center'>{marmita.proteina} - 100gr</p>
-                        <p className='font-indie text-xl text-center'>{marmita.carboidrato} - 100gr</p>
-                        <p className='font-indie text-xl text-center'>{marmita.vegetal} - 200gr</p>
+                {
+                    cardapio && Array.isArray(cardapio) && cardapio.length ?
+                    (
+                        <div className='bg-white/70 border border-gray-500 rounded-lg  mb-4'>
+                            {cardapio.map((marmita, index) => (
+                                <div key={index} className='w-4/5 mx-auto py-6'>
+                                <p className='font-indie text-xl text-center'>{marmita.proteina} - 100gr</p>
+                                <p className='font-indie text-xl text-center'>{marmita.carboidrato} - 100gr</p>
+                                <p className='font-indie text-xl text-center'>{marmita.vegetal} - 200gr</p>
+                                </div>
+                            ))}
                         </div>
-                    )) : <></>}
-                </div>
+                    ) : <></>
+                }
+                
                 <div className='flex justify-around items-center'>
                     <h3 className='font-bold text-center text-dark text-xl mr-3'>Quantidade de marmitas</h3>
                     <Select
