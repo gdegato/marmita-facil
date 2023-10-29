@@ -54,51 +54,53 @@ function MonteMarmita() {
 
     return (
         <Default withHeader>
-            <div className="flex flex-col justify-center items-center">
-                <h1 className='text-dark text-4xl font-semibold text-center mb-8 flex justify-center items-center tracking-tighter'>Balanceando a marmita</h1>
+            <div className='sm:max-w-sm sm:mx-auto'>
+                <div className="flex flex-col justify-center items-center">
+                    <h1 className='text-dark text-4xl font-semibold text-center mb-8 flex justify-center items-center tracking-tighter'>Balanceando a marmita</h1>
+                    <div className='w-full'>
+                        <Select
+                            options={proteinas.map((proteina) => ({ value: proteina.name, label: proteina.name }))}
+                            getOptionValue={(option) => option.value}
+                            onChange={({ value }) => setProteina(value)}
+                            className="w-full mb-5"
+                            placeholder="Proteína"
+                            borderColor="red"
+                        />
+                    </div>
+                    <div className='w-full'>
+                        <Select
+                            options={carboidratos.map((carboidrato) => ({ value: carboidrato.name, label: carboidrato.name }))}
+                            getOptionValue={(option) => option.value}
+                            onChange={({ value }) => setCarboidrato(value)}
+                            className="w-full mb-5"
+                            placeholder="Carboidrato"
+                            borderColor="orange"
+                        />
+                    </div>
                 <div className='w-full'>
+                        <Select
+                            options={vegetais.map((vegetal) => ({ value: vegetal.name, label: vegetal.name }))}
+                            getOptionValue={(option) => option.value}
+                            onChange={({ value }) => setVegetal(value)}
+                            className="w-full mb-5"
+                            placeholder="Legumes & Vegetais"
+                            borderColor="green"
+                        />
+                </div>
+                </div>
+                <div className='flex justify-around items-center'>
+                    <h3 className='font-bold text-center text-dark text-xl mr-3'>Quantidade de marmitas</h3>
                     <Select
-                        options={proteinas.map((proteina) => ({ value: proteina.name, label: proteina.name }))}
-                        getOptionValue={(option) => option.value}
-                        onChange={({ value }) => setProteina(value)}
-                        className="w-full mb-5"
-                        placeholder="Proteína"
-                        borderColor="red"
+                        options={quantidadeSelectInputOptions}
+                        onChange={({ value }) => setQuantidade(value)}
+                        placeholder="0"
+                        className="w-1/2 xs:max-w-[80px]"
+                        borderColor="gray"
                     />
                 </div>
-                <div className='w-full'>
-                    <Select
-                        options={carboidratos.map((carboidrato) => ({ value: carboidrato.name, label: carboidrato.name }))}
-                        getOptionValue={(option) => option.value}
-                        onChange={({ value }) => setCarboidrato(value)}
-                        className="w-full mb-5"
-                        placeholder="Carboidrato"
-                        borderColor="orange"
-                    />
+                <div className="mt-10 mb-4 text-center">
+                    <Button disabled={!isValidForm()} onClick={adicionaMarmita} text="avançar" isSecondary={true} />
                 </div>
-               <div className='w-full'>
-                    <Select
-                        options={vegetais.map((vegetal) => ({ value: vegetal.name, label: vegetal.name }))}
-                        getOptionValue={(option) => option.value}
-                        onChange={({ value }) => setVegetal(value)}
-                        className="w-full mb-5"
-                        placeholder="Legumes & Vegetais"
-                        borderColor="green"
-                    />
-               </div>
-            </div>
-            <div className='flex justify-center items-center'>
-                <h3 className='font-bold text-center text-dark text-xl mr-3'>Quantidade de marmitas</h3>
-                <Select
-                    options={quantidadeSelectInputOptions}
-                    onChange={({ value }) => setQuantidade(value)}
-                    placeholder="0"
-                    className="w-1/2"
-                    borderColor="gray"
-                />
-            </div>
-            <div className="mt-10 mb-4 text-center">
-                <Button disabled={!isValidForm()} onClick={adicionaMarmita} text="avançar" isSecondary={true} />
             </div>
         </Default>
     )

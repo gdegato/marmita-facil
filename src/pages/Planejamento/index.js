@@ -42,19 +42,24 @@ function Planejamento() {
 
     return (
         <Default withHeader>
-            <h1 className='text-dark text-4xl font-semibold text-center mb-8 flex justify-center items-center tracking-tighter'>Planejamento final</h1>
-            <div className='mt-4 text-center' ref={pdfRef}>
-                <SummaryCardapio />
-            </div>
-            <div className='mt-4 p-4 text-sm text-gray-600 rounded-xl bg-white/70 border border-solid border-gray-500'>
-                <p>A média de tempo para preparar uma refeição é de, no mínimo, uma hora. O planejamento que você montou equivale a {qtdTotalMarmitas} horas para aproveitar com o que quiser!</p>
-            </div>
-            <div className="text-center mt-4">
-                <Button text="Baixar Cardápio PDF" isSecondary={true} onClick={downloadPDF} />
+            <div className=' sm:max-w-4xl sm:mx-auto'>
+                <h1 className='text-dark text-4xl font-semibold text-center mb-8 flex justify-center items-center tracking-tighter'>Planejamento final</h1>
+                <div className='mt-4 text-center' ref={pdfRef}>
+                    <SummaryCardapio />
+                </div>
+                <div className='flex flex-col items-center gap-4 md:flex-row md:justify-around'>
+                    <div className='mt-4 p-4 text-sm text-gray-600 rounded-xl bg-white/70 border border-solid border-gray-500 max-w-xs'>
+                        <p>A média de tempo para preparar uma refeição é de, no mínimo, uma hora. O planejamento que você montou equivale a {qtdTotalMarmitas} horas para aproveitar com o que quiser!</p>
+                    </div>
+                    <div className="text-center flex flex-col gap-4 items-center justify-center sm:flex-row sm:justify-between md:mt-4">
+                        <Button text="Baixar Cardápio PDF" isSecondary={true} onClick={downloadPDF} />
+                        
+                        <Link to="/montemarmita">
+                            <Button text="Criar Novo Cardápio" />
+                        </Link>
+                    </div>
+                </div>
                 
-                <Link to="/montemarmita">
-                    <Button text="Criar Novo Cardápio" />
-                </Link>
             </div>
         </Default>
     )

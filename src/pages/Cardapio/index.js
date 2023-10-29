@@ -15,19 +15,21 @@ function Cardapio() {
 
   return (
     <Default withHeader>
-      <h1 className='text-dark text-4xl font-semibold text-center mb-8 flex justify-center items-center tracking-tighter'>Seu cardápio</h1>
-      <div className='mt-8 text-center'>
-        <SummaryCardapio />
-        <p className='pt-10 font-bold'>Deseja montar outro cardápio?</p>
-      </div>
+      <div className='sm:max-w-sm sm:mx-auto'>
+        <h1 className='text-dark text-4xl font-semibold text-center mb-8 flex justify-center items-center tracking-tighter'>Seu cardápio</h1>
+        <div className='mt-8 text-center'>
+          <SummaryCardapio />
+          <p className='pt-10 font-bold'>Deseja montar outro cardápio?</p>
+        </div>
 
-      <div className="flex items-center justify-around gap-4 mt-8">
-        <Link to="/montemarmita">
-          <Button text="SIM" isSmall={true} />
-        </Link>
-        <Link to="/planejamento">
-          <Button isSecondary text="NÃO" isSmall={true} />
-        </Link>
+        <div className="flex items-center justify-around gap-4 mt-8">
+          <Link to="/montemarmita">
+            <Button text="SIM" isSmall={true} />
+          </Link>
+          <Link to="/planejamento">
+            <Button isSecondary text="NÃO" isSmall={true} />
+          </Link>
+        </div>
       </div>
     </Default>
   )
