@@ -23,7 +23,7 @@ function Cardapio() {
         </div>
 
         <div className="flex items-center justify-around gap-4 mt-8">
-          <Link to="/montemarmita">
+          <Link to="/">
             <Button text="SIM" isSmall={true} />
           </Link>
           <Link to="/planejamento">

@@ -13,7 +13,7 @@ const Home = () => {
             <LogoMarmita />
           </div>
 
-          <h2 class="font-bold text-dark text-xl text-center tracking-tighter mb-5">Marmitas fáceis para aproveitar o melhor da vida</h2>
+          <h2 className="font-bold text-dark text-xl text-center tracking-tighter mb-5">Marmitas fáceis para aproveitar o melhor da vida</h2>
           <h4 className='font-bold text-red text-base text-center tracking-tighter mb-5'>
             Quer uma rotina de alimentação saudável economizando tempo e dinheiro?
             Vem com a gente!
@@ -40,7 +40,7 @@ const Home = () => {
               <Button text="Criar Cardápio" />
             </Link>
 
-            <Link to="/montemarmita">
+            <Link to="/cardapiosprontos">
               <Button text="Cardápios Prontos" isSecondary={true} />
             </Link>
           </div>

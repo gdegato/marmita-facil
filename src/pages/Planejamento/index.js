@@ -54,7 +54,7 @@ function Planejamento() {
                     <div className="text-center flex flex-col gap-4 items-center justify-center sm:flex-row sm:justify-between md:mt-4">
                         <Button text="Baixar Cardápio PDF" isSecondary={true} onClick={downloadPDF} />
                         
-                        <Link to="/montemarmita">
+                        <Link to="/">
                             <Button text="Criar Novo Cardápio" />
                         </Link>
                     </div>
