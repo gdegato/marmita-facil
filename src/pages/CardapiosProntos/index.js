@@ -1,20 +1,15 @@
 import Button from '../../components/Button'
 import Select from '../../components/Select'
 import Default from '../../templates/default'
-import { useState } from 'react';
-import proteinas from '../../data/proteinas.json'
-import carboidratos from '../../data/carboidratos.json'
-import vegetais from '../../data/vegetais.json'
+import { useState } from 'react'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import Storage from '../../data/storage'
+import cardapios from "../../data/cardapios.json"
 
-
-function MonteMarmita() {
+function CardapiosProntos() {
     const history = useHistory()
-    const [quantidade, setQuantidade] = useState(0);
-    const [proteina, setProteina] = useState();
-    const [carboidrato, setCarboidrato] = useState();
-    const [vegetal, setVegetal] = useState();
+    const [quantidade, setQuantidade] = useState(0)
+    const [cardapio, setCardapio] = useState()
 
     const quantidadeSelectInputOptions = [
         { value: 1, label: 1 },
@@ -25,7 +20,7 @@ function MonteMarmita() {
     ]
 
     const isValidForm = () => {
-        return quantidade > 0 && proteina && carboidrato && vegetal
+        return quantidade > 0 && cardapio
     }
 
     const adicionaMarmita = (e) => {
@@ -40,9 +35,9 @@ function MonteMarmita() {
             }
 
             cardapioNovo.push({
-                proteina,
-                carboidrato,
-                vegetal,
+                "proteina": cardapio[0].proteina,
+                "carboidrato": cardapio[0].carboidrato,
+                "vegetal": cardapio[0].vegetal,
                 quantidade
             })
 
@@ -56,38 +51,33 @@ function MonteMarmita() {
         <Default withHeader>
             <div className='sm:max-w-sm sm:mx-auto'>
                 <div className="flex flex-col justify-center items-center">
-                    <h1 className='text-dark text-4xl font-semibold text-center mb-8 flex justify-center items-center tracking-tighter'>Balanceando a marmita</h1>
+                    <h1 className='text-dark text-4xl font-semibold text-center mb-8 flex justify-center items-center tracking-tighter'>Escolha um cardápio pronto</h1>
                     <div className='w-full'>
                         <Select
-                            options={proteinas.map((proteina) => ({ value: proteina.name, label: proteina.name }))}
+                            options={cardapios.map((cardapio) => ({ value: cardapio.ingredients, label: cardapio.name }))}
                             getOptionValue={(option) => option.value}
-                            onChange={({ value }) => setProteina(value)}
+                            onChange={({ value }) => setCardapio([value])}
                             className="w-full mb-5"
-                            placeholder="Proteína"
+                            placeholder="Cardápios"
                             borderColor="red"
                         />
                     </div>
-                    <div className='w-full'>
-                        <Select
-                            options={carboidratos.map((carboidrato) => ({ value: carboidrato.name, label: carboidrato.name }))}
-                            getOptionValue={(option) => option.value}
-                            onChange={({ value }) => setCarboidrato(value)}
-                            className="w-full mb-5"
-                            placeholder="Carboidrato"
-                            borderColor="orange"
-                        />
-                    </div>
-                <div className='w-full'>
-                        <Select
-                            options={vegetais.map((vegetal) => ({ value: vegetal.name, label: vegetal.name }))}
-                            getOptionValue={(option) => option.value}
-                            onChange={({ value }) => setVegetal(value)}
-                            className="w-full mb-5"
-                            placeholder="Legumes & Vegetais"
-                            borderColor="green"
-                        />
                 </div>
-                </div>
+                {
+                    cardapio && Array.isArray(cardapio) && cardapio.length ?
+                    (
+                        <div className='bg-white/70 border border-gray-500 rounded-lg  mb-4'>
+                            {cardapio.map((marmita, index) => (
+                                <div key={index} className='w-4/5 mx-auto py-6'>
+                                <p className='font-indie text-xl text-center'>{marmita.proteina} - 100gr</p>
+                                <p className='font-indie text-xl text-center'>{marmita.carboidrato} - 100gr</p>
+                                <p className='font-indie text-xl text-center'>{marmita.vegetal} - 200gr</p>
+                                </div>
+                            ))}
+                        </div>
+                    ) : <></>
+                }
+                
                 <div className='flex justify-around items-center'>
                     <h3 className='font-bold text-center text-dark text-xl mr-3'>Quantidade de marmitas</h3>
                     <Select
@@ -106,4 +96,4 @@ function MonteMarmita() {
     )
 }
 
-export default MonteMarmita
+export default CardapiosProntos
