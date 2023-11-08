@@ -61,7 +61,7 @@ function MonteMarmita() {
       <div className="sm:max-w-sm sm:mx-auto">
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-dark text-4xl font-semibold text-center mb-8 flex justify-center items-center tracking-tighter">
-            Balanceando a marmita
+            Monte com seus ingredientes preferidos
           </h1>
           <div className="w-full">
             <Select
@@ -119,7 +119,7 @@ function MonteMarmita() {
           <Button
             disabled={!isValidForm()}
             onClick={adicionaMarmita}
-            text="avançar"
+            text="Adicionar"
             isSecondary={true}
           />
         </div>

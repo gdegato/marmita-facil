@@ -19,7 +19,7 @@ function Cardapio() {
         </h1>
         <div className="mt-8 text-center">
           <SummaryCardapio />
-          <p className="pt-10 font-bold">Deseja montar outro cardápio?</p>
+          <p className="pt-10 font-bold">Deseja adicionar novas marmitas?</p>
         </div>
 
         <div className="flex items-center justify-around gap-4 mt-8">
