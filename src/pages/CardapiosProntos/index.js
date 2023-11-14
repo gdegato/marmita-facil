@@ -54,7 +54,7 @@ function CardapiosProntos() {
       <div className="sm:max-w-sm sm:mx-auto">
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-dark text-4xl font-semibold text-center mb-8 flex justify-center items-center tracking-tighter">
-            Escolha um cardápio pronto
+            Escolha marmitas prontas
           </h1>
           <div className="w-full">
             <Select
@@ -65,7 +65,7 @@ function CardapiosProntos() {
               getOptionValue={(option) => option.value}
               onChange={({ value }) => setMarmita(value)}
               className="w-full mb-5"
-              placeholder="Cardápios"
+              placeholder="Marmitas"
               borderColor="red"
             />
           </div>
@@ -100,7 +100,7 @@ function CardapiosProntos() {
           <Button
             disabled={!isValidForm()}
             onClick={adicionaMarmita}
-            text="avançar"
+            text="Adicionar"
             isSecondary={true}
           />
         </div>

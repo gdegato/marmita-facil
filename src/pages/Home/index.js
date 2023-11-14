@@ -38,11 +38,11 @@ const Home = () => {
           </ul>
           <div className="flex flex-col text-center mt-4 gap-4 items-center justify-center sm:flex-row">
             <Link to="/montemarmita">
-              <Button text="Criar Cardápio" />
+              <Button text="Marmita personalizada" />
             </Link>
 
             <Link to="/cardapiosprontos">
-              <Button text="Cardápios Prontos" isSecondary={true} />
+              <Button text="Marmitas prontas" isSecondary={true} />
             </Link>
           </div>
         </div>
