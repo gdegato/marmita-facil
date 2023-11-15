@@ -12,16 +12,19 @@ Criada pelo Grupo 05 com os integrantes:
 
 ---
 
-- Link para visualização do projeto: https://marmita-facil-im27uvidj-gdegato.vercel.app/.
+- Link para visualização do Front-End: https://marmita-facil.vercel.app/.
+- Links para visualização da API: https://marmita-facil-api.onrender.com/foods e https://marmita-facil-api.onrender.com/menu-foods.
+- Link para código do Back-End: https://github.com/joelsantosbr/marmita-facil-api.
 
 ## Tecnologias utilizadas
 
-- HTML5, CSS3, Javascript, ReactJS, Tailwind CSS, Local Storage.
+- Front-End: HTML5, CSS3, Javascript, ReactJS, Tailwind CSS, Session Storage.
+- Back-End: Typescript, Prisma, PostgreSQL.
 
 ## Sobre o projeto
 - A aplicação fornece ao usuário a possibilidade de escolha de alimentos e quantidade de marmitas, montando um cardápio simples e balanceado para o dia-a-dia que o auxilie no momento das compras e no preparo de suas refeições.
 
-![Image](https://user-images.githubusercontent.com/68246508/235309283-97ab8990-5c04-49f2-8d6c-24c303180f4d.gif)
+![ezgif com-video-to-gif](https://github.com/gdegato/marmita-facil/assets/68246508/fe5bb6a6-bad1-41bc-ae85-20e7c9c9ab18)
 
 ## Instalação
 
@@ -30,6 +33,7 @@ Criada pelo Grupo 05 com os integrantes:
 - Abra a pasta em uma IDE de sua preferência.
 - Abra um terminal de sua preferência e insira o seguinte comando para instalar as dependências necessárias:
 ```bash
+
   npm install
 ```
 - Em seguida, insira o seguinte comando para iniciar a aplicação em modo de desenvolvimento:
